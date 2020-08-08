@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  Food Tracker
 //
-//  Created by Alessandro Allegranzi on 1/9/20.
+//  Created by Alessandro Allegranzi on 8/8/20.
 //  Copyright © 2020 Alessandro Allegranzi. All rights reserved.
 //
 
