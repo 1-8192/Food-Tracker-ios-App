@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Kfs-MK-JlX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Kfs-MK-JlX">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -14,7 +16,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="fP6-xx-gHI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MealTableViewCell" rowHeight="90" id="yVo-sI-HAQ" customClass="MealTableViewCell" customModule="Food_Tracker" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="90"/>
@@ -44,6 +46,7 @@
                                     <outlet property="nameLabel" destination="EZ7-6Z-CYx" id="QlD-B8-niq"/>
                                     <outlet property="photoImageView" destination="I3C-hc-c4d" id="QN9-is-slc"/>
                                     <outlet property="ratingControl" destination="fvY-he-JWr" id="D1W-Ij-7kO"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="ShowDetail" id="Eka-vd-4hY"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -69,11 +72,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MealViewController" customModule="Food_Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hmg-dz-exE">
-                                <rect key="frame" x="0.0" y="76" width="414" height="362"/>
+                                <rect key="frame" x="0.0" y="108" width="414" height="362"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Create Meal" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5oO-yI-tiS">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="34"/>
@@ -100,13 +103,13 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="hmg-dz-exE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="2Ap-wX-Jey"/>
                             <constraint firstItem="hmg-dz-exE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="i5Y-ex-g0V"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hmg-dz-exE" secondAttribute="trailing" id="wke-Am-xOD"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="New Meal" id="iRK-YZ-azs">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="cbT-4A-Jr0">
@@ -171,10 +174,16 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aQo-pE-OJY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1047.8260869565217" y="138.61607142857142"/>
+            <point key="canvasLocation" x="1157" y="512"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Eka-vd-4hY"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="defaultPhoto" width="540" height="540"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
